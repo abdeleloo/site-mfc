@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil - MFC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="main-header">
+    <div class="container header-content">
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="inscription.html">Inscription</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <h2 class="page-title">La voie de la connaissance</h2>
+      <h3 class="subtitle">Bienvenue à la Maison de la Formation Continue</h3>
+      <div class="card">
+        <h3>Votre partenaire formation</h3>
+        <p>La Maison de la Formation Continue (MFC) est un espace de formation entièrement réservé aux adultes, doté d'une organisation qui permet d'optimiser les temps de formation.</p>
+        <p>Notre culture pédagogique repose sur la capitalisation des savoirs fondamentaux et des savoir-faire pédagogiques que nous développons en permanence.</p>
+        <div class="highlight">
+          <p><strong>« La voie de la connaissance »</strong> incarne toute la culture pédagogique de la MFC et symbolise son expertise.</p>
+        </div>
+      </div>
+    </section>
+    <section class="page-section">
+      <h3 class="section-title">Nos domaines d'expertise</h3>
+      <div class="grid grid-2">
+        <div class="card accent-blue">
+          <h4>Informatique & Digital</h4>
+          <p>Formations techniques et métiers du numérique</p>
+        </div>
+        <div class="card accent-green">
+          <h4>Management & Leadership</h4>
+          <p>Développement des compétences managériales</p>
+        </div>
+        <div class="card accent-orange">
+          <h4>Soft Skills</h4>
+          <p>Compétences comportementales et relationnelles</p>
+        </div>
+        <div class="card accent-purple">
+          <h4>Langues & Communication</h4>
+          <p>Formations linguistiques et communication</p>
+        </div>
+      </div>
+    </section>
+    <section class="page-section">
+      <h3 class="section-title">Chiffres clés</h3>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <strong data-count="25">0</strong>
+          <span>Années d'expérience</span>
+        </div>
+        <div class="stat-card">
+          <strong data-count="5000">0</strong>
+          <span>Stagiaires formés par an</span>
+        </div>
+        <div class="stat-card">
+          <strong data-count="50">0</strong>
+          <span>Formations différentes</span>
+        </div>
+        <div class="stat-card">
+          <strong data-count="98">0</strong>
+          <span>Taux de satisfaction</span>
+        </div>
+      </div>
+    </section>
+    <section class="page-section">
+      <h3 class="section-title">Dernières actualités</h3>
+      <div class="news-grid">
+        <article class="card">
+          <h4>Nouvelle formation Data Science</h4>
+          <p>Découvrez notre nouvelle formation en Data Science & Intelligence Artificielle. Début des sessions en septembre 2024.</p>
+          <span class="badge badge-blue">Nouveau</span>
+        </article>
+        <article class="card">
+          <h4>Ouverture d'un nouveau centre</h4>
+          <p>La MFC ouvre un nouveau centre de formation à Toulouse. Inauguration prévue le 15 juin 2024.</p>
+          <span class="badge badge-green">Événement</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>MFC - Maison de la Formation Continue</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="formations.html">Formations</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="contact-info">
+      <div>OVH SAS — 2 rue Kellermann, 59100 Roubaix</div>
+      <div>AZUR — 13, rue Paul Lecourt, 59000 Lille</div>
+      <div>Domaine : mfc.fr</div>
+    </div>
+  </footer>
+  <script>
+    const header = document.getElementById('main-header');
+    const onScroll = () => {
+      if (!header) {
+        return;
+      }
+      header.classList.toggle('header-scrolled', window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    const links = document.querySelectorAll('nav a');
+    const currentPath = window.location.pathname.split('/').pop();
+    links.forEach((link) => {
+      const linkPath = link.getAttribute('href')?.split('/').pop();
+      if (linkPath && linkPath === currentPath) {
+        link.classList.add('active');
+      }
+    });
+
+    const counters = document.querySelectorAll('[data-count]');
+    if (counters.length) {
+      counters.forEach((counter) => {
+        const target = Number(counter.dataset.count || 0);
+        const duration = 1200;
+        const startTime = performance.now();
+        const step = (now) => {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * target);
+          counter.textContent = value + (target === 98 ? '%' : '+');
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        };
+        requestAnimationFrame(step);
+      });
+    }
+  </script>
+</body>
+</html>
