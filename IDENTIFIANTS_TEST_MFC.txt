@@ -1,0 +1,65 @@
+IDENTIFIANTS DE TEST (MFC)
+
+Connexion via : http://localhost/site_mfc/pages/connexion.php
+
+IMPORTANT
+- Le module de connexion actuel valide (Rôle + Code/Matricule + Email).
+- Le champ “Mot de passe” n’est vérifié que si la colonne PasswordHash existe dans la table.
+- Avec le schéma MDF (stagiaires/formateurs), il n’y a pas de mot de passe par défaut.
+
+------------------------------------------------------------
+1) COMPTES A UTILISER (après insertion SQL)
+------------------------------------------------------------
+
+Stagiaire
+- Rôle : stagiaire
+- Code stagiaire : ST00
+- Email : st00@mfc.fr
+- Mot de passe : (vide)
+
+Formateur
+- Rôle : formateur
+- Matricule : FORS00
+- Email : fors00@mfc.fr
+- Mot de passe : (vide)
+
+------------------------------------------------------------
+2) SQL A EXECUTER DANS phpMyAdmin (base mfc ou bd_mfc)
+------------------------------------------------------------
+
+-- Remplace “mfc” par “bd_mfc” si c’est ta base réelle.
+USE mfc;
+
+-- Stagiaire ST00
+INSERT INTO `stagiaires` (`CodeStargiaire`, `Nom`, `Prenom`, `Rue`, `Ville`, `Cp`, `Tel`, `Email`, `Societé`)
+VALUES ('ST00', 'Test', 'Stagiaire', '1 Rue de la Formation', 'Lille', '59000', '0300000000', 'st00@mfc.fr', 'MFC')
+ON DUPLICATE KEY UPDATE
+  `Nom`=VALUES(`Nom`),
+  `Prenom`=VALUES(`Prenom`),
+  `Rue`=VALUES(`Rue`),
+  `Ville`=VALUES(`Ville`),
+  `Cp`=VALUES(`Cp`),
+  `Tel`=VALUES(`Tel`),
+  `Email`=VALUES(`Email`),
+  `Societé`=VALUES(`Societé`);
+
+-- Formateur FORS00
+INSERT INTO `formateurs` (`Matricule`, `Nom`, `Prenom`, `Rue`, `Ville`, `Cp`, `Tel`, `Email`, `Spécialité`)
+VALUES ('FORS00', 'Test', 'Formateur', '2 Avenue des Technologies', 'Lyon', '69000', '0400000000', 'fors00@mfc.fr', 'Informatique')
+ON DUPLICATE KEY UPDATE
+  `Nom`=VALUES(`Nom`),
+  `Prenom`=VALUES(`Prenom`),
+  `Rue`=VALUES(`Rue`),
+  `Ville`=VALUES(`Ville`),
+  `Cp`=VALUES(`Cp`),
+  `Tel`=VALUES(`Tel`),
+  `Email`=VALUES(`Email`),
+  `Spécialité`=VALUES(`Spécialité`);
+
+------------------------------------------------------------
+3) VERIFICATION RAPIDE
+------------------------------------------------------------
+
+SELECT `CodeStargiaire`, `Email` FROM `stagiaires` WHERE `CodeStargiaire`='ST00';
+SELECT `Matricule`, `Email` FROM `formateurs` WHERE `Matricule`='FORS00';
+
