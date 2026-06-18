@@ -1,0 +1,185 @@
+/* ============================================================
+   MFC Admin — Stylesheet
+   BTS SIO SLAM — Sidebar layout
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --sidebar-w: 220px;
+  --blue-900: #1e3a8a;
+  --blue-700: #1d4ed8;
+  --blue-600: #2563eb;
+  --blue-100: #dbeafe;
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-200: #e5e7eb;
+  --gray-50:  #f9fafb;
+  --shadow:   0 8px 24px rgba(15,23,42,.10);
+  --radius:   12px;
+}
+
+body {
+  font-family: "Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+  margin: 0;
+  background: var(--gray-50);
+  color: #0f172a;
+  min-height: 100vh;
+}
+
+/* ── Login page ── */
+body.login-page {
+  background: linear-gradient(160deg,#111827,#1f2937);
+  padding: 2.5rem 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+}
+body.login-page main {
+  background: #fff; color: #0f172a; padding: 2rem;
+  border-radius: 16px; max-width: 480px; width: 100%;
+  box-shadow: 0 25px 60px rgba(15,23,42,.35);
+  margin: 0;
+}
+
+/* ── Sidebar layout ── */
+.admin-layout {
+  display: flex; min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: var(--sidebar-w); flex-shrink: 0;
+  background: linear-gradient(180deg,#0f172a 0%,#1e3a8a 100%);
+  display: flex; flex-direction: column;
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+}
+
+.sidebar-brand {
+  padding: 1.5rem 1.25rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.sidebar-brand strong { display: block; color: #fff; font-size: 1.1rem; font-weight: 800; }
+.sidebar-brand span   { color: #93c5fd; font-size: .75rem; }
+
+.sidebar-nav { padding: .75rem; flex: 1; }
+.sidebar-nav a {
+  display: flex; align-items: center; gap: .6rem;
+  color: #c7d2fe; text-decoration: none;
+  padding: .6rem .85rem; border-radius: 8px;
+  font-size: .875rem; font-weight: 500;
+  transition: background .15s, color .15s;
+  margin-bottom: .2rem;
+}
+.sidebar-nav a:hover, .sidebar-nav a.active {
+  background: rgba(255,255,255,.15); color: #fff;
+}
+.sidebar-nav .sidebar-section {
+  color: #6b7280; font-size: .7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  padding: .75rem .85rem .35rem;
+}
+
+.sidebar-footer {
+  padding: 1rem .75rem; border-top: 1px solid rgba(255,255,255,.1);
+}
+.sidebar-footer a {
+  display: block; color: #9ca3af; font-size: .8rem;
+  text-decoration: none; padding: .45rem .85rem; border-radius: 8px;
+  transition: background .15s, color .15s;
+}
+.sidebar-footer a:hover { background: rgba(255,255,255,.1); color: #fff; }
+
+.admin-content { flex: 1; padding: 1.75rem 2rem; overflow-x: hidden; }
+
+.admin-topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 1.5rem; flex-wrap: wrap; gap: .75rem;
+}
+.admin-topbar h1 { font-size: 1.35rem; color: var(--blue-900); margin: 0; }
+.admin-topbar .user-info { font-size: .84rem; color: #64748b; }
+
+/* ── Cards ── */
+.admin-card {
+  background: #fff; border-radius: var(--radius);
+  padding: 1.4rem; box-shadow: var(--shadow);
+  border: 1px solid var(--gray-200); margin-bottom: 1.5rem;
+}
+
+/* ── Stats ── */
+.stats-grid {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  margin: 1.25rem 0;
+}
+.stat-box {
+  background: #fff; border-radius: var(--radius);
+  padding: 1.2rem; text-align: center;
+  box-shadow: var(--shadow); border: 1px solid var(--gray-200);
+}
+.stat-box strong { display: block; font-size: 2rem; color: var(--blue-900); }
+.stat-box span   { font-size: .82rem; color: #64748b; }
+
+/* ── Tables ── */
+table { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: .75rem; }
+th, td { padding: .62rem .85rem; border-bottom: 1px solid var(--gray-200); text-align: left; }
+th { background: var(--blue-100); color: var(--blue-900); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+tr:hover td { background: #eff6ff; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block; padding: .38rem .9rem; border-radius: 7px;
+  font-size: .85rem; font-weight: 600; text-decoration: none;
+  cursor: pointer; border: none; transition: opacity .15s;
+}
+.btn:hover { opacity: .88; }
+.btn-blue   { background: #2563eb; color: #fff; }
+.btn-red    { background: #dc2626; color: #fff; }
+.btn-green  { background: #16a34a; color: #fff; }
+.btn-gray   { background: #64748b; color: #fff; }
+.btn-orange { background: #ea580c; color: #fff; }
+
+/* ── Forms ── */
+form label { display: block; font-weight: 600; margin: .6rem 0 .2rem; font-size: .85rem; color: var(--blue-900); }
+form input, form select, form textarea {
+  font: inherit; width: 100%; padding: .5rem .7rem;
+  border: 1.5px solid #cbd5e1; border-radius: 8px;
+  background: #f8fafc; box-sizing: border-box; font-size: .9rem;
+  transition: border-color .15s, box-shadow .15s;
+}
+form input:focus, form select:focus, form textarea:focus {
+  outline: none; border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.12); background: #fff;
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
+.card-form {
+  background: #f8fafc; border: 1px solid #e2e8f0;
+  border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block; padding: .18rem .6rem; border-radius: 999px;
+  font-size: .73rem; font-weight: 700; letter-spacing: .02em;
+}
+.badge-blue   { background: #dbeafe; color: #1d4ed8; }
+.badge-green  { background: #dcfce7; color: #15803d; }
+.badge-orange { background: #ffedd5; color: #c2410c; }
+.badge-gray   { background: #f1f5f9; color: #64748b; }
+.badge-red    { background: #fee2e2; color: #991b1b; }
+
+/* ── Alerts ── */
+.alert   { background: #fee2e2; color: #991b1b; padding: .75rem 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid #dc2626; }
+.success { background: #dcfce7; color: #15803d; padding: .75rem 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid #16a34a; }
+.muted   { color: #64748b; }
+
+code {
+  font-family: "Consolas","Courier New",monospace;
+  background: #f1f5f9; padding: .1rem .35rem; border-radius: 4px; font-size: .85em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .admin-sidebar { display: none; }
+  .admin-content { padding: 1.1rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  table { font-size: .78rem; }
+  th, td { padding: .45rem .5rem; }
+}
