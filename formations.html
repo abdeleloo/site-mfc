@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations - MFC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container header-content">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2 class="page-title">Nos formations & sessions</h2>
+        <form method="get" data-filter="formations">
+            <label for="domaine">Domaine</label>
+            <select id="domaine" name="domaine">
+                <option value="">Tous</option>
+                <option value="dev">Développement</option>
+                <option value="seminaire">Séminaire</option>
+                <option value="institution">Institution</option>
+            </select>
+            <label for="motcle">Mot-clé</label>
+            <input id="motcle" name="motcle" type="text">
+            <button type="submit">Filtrer</button>
+        </form>
+        <div class="formation-list" id="formation-list">
+            <div class="formation-item" data-domain="dev" data-name="Administration Réseau & Systèmes">
+                <h4>Administration Réseau & Systèmes</h4>
+                <p>Gestion de réseaux d'entreprise, systèmes serveurs et sécurité.</p>
+                <span class="badge badge-blue">Niveau Avancé</span>
+                <span class="badge badge-green">5 jours</span>
+                <span class="badge badge-orange">À partir de 2 500 €</span>
+            </div>
+            <div class="formation-item" data-domain="dev" data-name="Développement Web Fullstack">
+                <h4>Développement Web Fullstack</h4>
+                <p>Technologies front-end et back-end pour applications modernes.</p>
+                <span class="badge badge-blue">Niveau Intermédiaire</span>
+                <span class="badge badge-green">10 jours</span>
+                <span class="badge badge-orange">À partir de 3 800 €</span>
+            </div>
+            <div class="formation-item" data-domain="seminaire" data-name="Cybersécurité Fondamentale">
+                <h4>Cybersécurité Fondamentale</h4>
+                <p>Protection des données et prévention des attaques.</p>
+                <span class="badge badge-blue">Tous niveaux</span>
+                <span class="badge badge-green">3 jours</span>
+                <span class="badge badge-orange">À partir de 1 500 €</span>
+            </div>
+            <div class="formation-item" data-domain="institution" data-name="Cloud Computing & Virtualisation">
+                <h4>Cloud Computing & Virtualisation</h4>
+                <p>Technologies cloud, virtualisation et déploiement en ligne.</p>
+                <span class="badge badge-blue">Niveau Avancé</span>
+                <span class="badge badge-green">4 jours</span>
+                <span class="badge badge-orange">À partir de 2 200 €</span>
+            </div>
+        </div>
+        <h3>Centres & capacités</h3>
+        <div class="grid grid-2">
+            <div class="card">
+                <h4>Lille (Siège)</h4>
+                <p>250 postes informatiques, 30 salles de formation, laboratoire réseau.</p>
+            </div>
+            <div class="card">
+                <h4>Bordeaux</h4>
+                <p>120 postes informatiques, 15 salles, espace coworking.</p>
+            </div>
+            <div class="card">
+                <h4>Lyon</h4>
+                <p>180 postes informatiques, 20 salles, lab sécurité.</p>
+            </div>
+            <div class="card">
+                <h4>Nantes</h4>
+                <p>100 postes informatiques, 12 salles, salle VR.</p>
+            </div>
+        </div>
+        <h3>Calendrier des sessions 2024</h3>
+        <table class="session-table">
+            <thead>
+                <tr>
+                    <th>Formation</th>
+                    <th>Dates</th>
+                    <th>Durée</th>
+                    <th>Lieu</th>
+                    <th>Places</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Administration Réseau & Systèmes</td>
+                    <td>15-19 Avril 2024</td>
+                    <td>5 jours</td>
+                    <td>Lille</td>
+                    <td>12/15</td>
+                    <td>2 500 €</td>
+                </tr>
+                <tr>
+                    <td>Développement Web Fullstack</td>
+                    <td>6-17 Mai 2024</td>
+                    <td>10 jours</td>
+                    <td>Lyon</td>
+                    <td>8/12</td>
+                    <td>3 800 €</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Nos méthodes pédagogiques</h3>
+        <div class="grid grid-2">
+            <div class="card">
+                <h4>Apprentissage pratique</h4>
+                <p>Ateliers, travaux dirigés et mises en situation réelles.</p>
+            </div>
+            <div class="card">
+                <h4>Formation hybride</h4>
+                <p>Présentiel et distanciel avec ressources disponibles 24/7.</p>
+            </div>
+            <div class="card">
+                <h4>Suivi personnalisé</h4>
+                <p>Accompagnement avant, pendant et après la formation.</p>
+            </div>
+            <div class="card">
+                <h4>Certifications</h4>
+                <p>Préparation aux certifications reconnues du marché.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>MFC - Maison de la Formation Continue</p>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="inscription.html">Inscription</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="contact-info">
+            <div>OVH SAS — 2 rue Kellermann, 59100 Roubaix</div>
+            <div>AZUR — 13, rue Paul Lecourt, 59000 Lille</div>
+            <div>Domaine : mfc.fr</div>
+        </div>
+    </footer>
+    <script>
+        const header = document.getElementById('main-header');
+        const onScroll = () => {
+            if (!header) {
+                return;
+            }
+            header.classList.toggle('header-scrolled', window.scrollY > 10);
+        };
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        const links = document.querySelectorAll('nav a');
+        const currentPath = window.location.pathname.split('/').pop();
+        links.forEach((link) => {
+            const linkPath = link.getAttribute('href')?.split('/').pop();
+            if (linkPath && linkPath === currentPath) {
+                link.classList.add('active');
+            }
+        });
+
+        const filterForm = document.querySelector('form[data-filter="formations"]');
+        const list = document.getElementById('formation-list');
+        if (filterForm && list) {
+            const domain = filterForm.querySelector('#domaine');
+            const keyword = filterForm.querySelector('#motcle');
+            const items = Array.from(list.children);
+            const applyFilter = () => {
+                const domainValue = domain ? domain.value.toLowerCase() : '';
+                const keywordValue = keyword ? keyword.value.toLowerCase().trim() : '';
+                items.forEach((item) => {
+                    const itemDomain = (item.dataset.domain || '').toLowerCase();
+                    const itemName = (item.dataset.name || '').toLowerCase();
+                    const matchDomain = !domainValue || itemDomain === domainValue;
+                    const matchKeyword = !keywordValue || itemName.includes(keywordValue);
+                    item.style.display = matchDomain && matchKeyword ? '' : 'none';
+                });
+            };
+            filterForm.addEventListener('change', applyFilter);
+            filterForm.addEventListener('input', applyFilter);
+        }
+    </script>
+</body>
+</html>
