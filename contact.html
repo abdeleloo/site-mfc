@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MFC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container header-content">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2 class="page-title">Contactez-nous</h2>
+        <div class="card">
+            <h3>Documents et partenaires</h3>
+            <ul>
+                <li>CGV Location PC AZUR</li>
+                <li>Contrat Hébergement OVH</li>
+                <li>Contrat LS DRING Telecom</li>
+                <li>Devis MISCO MFC</li>
+                <li>Facture AZUR</li>
+                <li>Facture Consultat Freelance</li>
+                <li>Facture DRING Telecom</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Partenaires et prestations</h3>
+            <p>AZUR — 13, rue Paul Lecourt, 59000 Lille.</p>
+            <p>OVH SAS — 2 rue Kellermann, 59100 Roubaix — Tél : +33 3 20 45 36 80 — www.ovh.com.</p>
+            <p>Offre standard d’hébergement : mise en service 4,99 € HT, 6 premiers mois 1,99 € HT/mois puis 4,99 € HT/mois.</p>
+            <p>Domaine : mfc.fr.</p>
+        </div>
+        <div class="card">
+            <h3>Qualité & conformité</h3>
+            <p>Nos formations s’inscrivent dans une démarche qualité continue, avec suivi des acquis et amélioration des contenus.</p>
+        </div>
+        <div class="card">
+            <h3>Formulaire de contact</h3>
+            <form method="post">
+                <label for="nom">Nom</label>
+                <input id="nom" name="nom" type="text" required>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>MFC - Maison de la Formation Continue</p>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="inscription.html">Inscription</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="contact-info">
+            <div>OVH SAS — 2 rue Kellermann, 59100 Roubaix</div>
+            <div>AZUR — 13, rue Paul Lecourt, 59000 Lille</div>
+            <div>Domaine : mfc.fr</div>
+        </div>
+    </footer>
+    <script>
+        const header = document.getElementById('main-header');
+        const onScroll = () => {
+            if (!header) {
+                return;
+            }
+            header.classList.toggle('header-scrolled', window.scrollY > 10);
+        };
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        const links = document.querySelectorAll('nav a');
+        const currentPath = window.location.pathname.split('/').pop();
+        links.forEach((link) => {
+            const linkPath = link.getAttribute('href')?.split('/').pop();
+            if (linkPath && linkPath === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
