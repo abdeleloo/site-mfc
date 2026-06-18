@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui sommes-nous ? - MFC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container header-content">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2 class="page-title">Qui sommes-nous ?</h2>
+        <div class="card">
+            <h3>Interview de Directeur Général de la MFC</h3>
+            <p>Aimé EFCE</p>
+            <p>Patrick Poivre d’Ervor - Présentez-nous la MFC</p>
+            <p>Dans un espace de formation entièrement réservé aux adultes, la Maison de la Formation Continue s'est dotée d'une organisation qui lui permet d'optimiser les temps de formation.</p>
+            <p>La culture pédagogique de notre entreprise repose sur la capitalisation des savoirs fondamentaux et des savoir-faire pédagogiques que nous développons en permanence.</p>
+        </div>
+        <div class="card">
+            <h3>Notre histoire</h3>
+            <p>Fondée en 1998, la Maison de la Formation Continue (MFC) s'est imposée comme un acteur majeur de la formation professionnelle en France.</p>
+            <div class="highlight">
+                <p>La formation est un investissement, pas une dépense. Nous nous engageons à fournir des formations de qualité avec des résultats tangibles.</p>
+            </div>
+        </div>
+        <h3 class="section-title">Nos expertises</h3>
+        <div class="grid grid-2">
+            <div class="card">
+                <h4>Formations informatiques</h4>
+                <p>Cloud, cybersécurité, data, développement web.</p>
+            </div>
+            <div class="card">
+                <h4>Management & leadership</h4>
+                <p>Compétences managériales, leadership, communication.</p>
+            </div>
+            <div class="card">
+                <h4>Soft skills</h4>
+                <p>Prise de parole, gestion du stress, intelligence émotionnelle.</p>
+            </div>
+            <div class="card">
+                <h4>Langues étrangères</h4>
+                <p>Anglais, espagnol, allemand et chinois pour le monde professionnel.</p>
+            </div>
+        </div>
+        <h3 class="section-title">Nos centres de formation</h3>
+        <div class="center-grid">
+            <div class="card">
+                <h4>Lille (Siège)</h4>
+                <p><strong>Adresse :</strong> 123 Rue de la Formation, 59000 Lille</p>
+                <p><strong>Capacité :</strong> 250 postes informatiques</p>
+                <span class="badge badge-blue">Siège social</span>
+            </div>
+            <div class="card">
+                <h4>Bordeaux</h4>
+                <p><strong>Adresse :</strong> 45 Avenue des Technologies, 33000 Bordeaux</p>
+                <p><strong>Capacité :</strong> 120 postes informatiques</p>
+                <span class="badge badge-green">Nouveau</span>
+            </div>
+            <div class="card">
+                <h4>Lyon</h4>
+                <p><strong>Adresse :</strong> 78 Rue de l'Innovation, 69000 Lyon</p>
+                <p><strong>Capacité :</strong> 180 postes informatiques</p>
+            </div>
+            <div class="card">
+                <h4>Nantes</h4>
+                <p><strong>Adresse :</strong> 12 Boulevard du Digital, 44000 Nantes</p>
+                <p><strong>Capacité :</strong> 100 postes informatiques</p>
+            </div>
+        </div>
+        <h3>Gouvernance et sécurité</h3>
+        <div class="card">
+            <p>Notre politique de sécurité s’appuie sur une stratégie GPO dédiée : gestion des accès, restrictions des options sensibles et mise à jour automatique des postes.</p>
+            <p>Le service informatique administre les filiales avec des délégations d’OU et un mappage centralisé des ressources.</p>
+        </div>
+        <h3>Infrastructure nationale</h3>
+        <div class="card">
+            <p>Le réseau MFC s’appuie sur des serveurs Windows et Linux répartis entre le siège et les filiales (AD, DNS, DHCP, Samba, SGBD, sauvegardes).</p>
+            <ul>
+                <li>Siège Lille : AD, certificats, DNS, DHCP, RADIUS, SGBD MySQL, NAS</li>
+                <li>Filiales : AD en lecture seule, services Samba, DNS, DHCP</li>
+            </ul>
+        </div>
+        <h3>Source documentaire</h3>
+        <p>Document&nbsp;: Présentation structure MFC.docx</p>
+        <p>Auteur&nbsp;: Pierre</p>
+        <p>Création&nbsp;: 10/02/2013 16:29</p>
+        <p>Dernière modification&nbsp;: 03/10/2013 12:36</p>
+        <p>Dernière impression&nbsp;: 23/02/2013 18:46</p>
+    </main>
+    <footer>
+        <p>MFC - Maison de la Formation Continue</p>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="inscription.html">Inscription</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="contact-info">
+            <div>OVH SAS — 2 rue Kellermann, 59100 Roubaix</div>
+            <div>AZUR — 13, rue Paul Lecourt, 59000 Lille</div>
+            <div>Domaine : mfc.fr</div>
+        </div>
+    </footer>
+    <script>
+        const header = document.getElementById('main-header');
+        const onScroll = () => {
+            if (!header) {
+                return;
+            }
+            header.classList.toggle('header-scrolled', window.scrollY > 10);
+        };
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        const links = document.querySelectorAll('nav a');
+        const currentPath = window.location.pathname.split('/').pop();
+        links.forEach((link) => {
+            const linkPath = link.getAttribute('href')?.split('/').pop();
+            if (linkPath && linkPath === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
